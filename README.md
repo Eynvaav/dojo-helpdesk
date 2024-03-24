@@ -1,34 +1,50 @@
+# Dojo Helpdesk
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+- Clone the repo.
+- Run `npm install` in the root directory to install dependencies.
+- Run `json-server --watch --port 4000 ./data/db.json` to launch the server.
+- Run `npm run dev` to launch the project.
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dojo Helpdesk is a simple Next.js project made for managing tickets (tasks) in a company.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<p align="center">
+  Dashboard
+</p>
+<p align="center">
+  <img src="https://s8.uupload.ir/files/dashboard_13qj.png"/>
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br> 
+<p align="center">
+  Tickets
+</p>
+<p align="center">
+  <img src="https://s8.uupload.ir/files/tickets_3qjm.png"/>
+</p>
 
-## Learn More
+<br> 
+<p align="center">
+  Ticket Details
+</p>
+<p align="center">
+  <img src="https://s8.uupload.ir/files/datails_isti.png"/>
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+<br> 
+<p align="center">
+  Create Ticket
+</p>
+<p align="center">
+  <img src="https://s8.uupload.ir/files/new_bjwf.png"/>
+</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Credit
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I made this project through watching Next.js tutorial made by the legendary [Net Ninja](https://youtube.com/@NetNinja?si=24BDPQ0wmjk9Zeq5).
