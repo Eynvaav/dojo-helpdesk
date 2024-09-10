@@ -1,6 +1,15 @@
+import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
-export default function layout({ children }) {
+export default async function layout({ children }) {
+	const supabase = createClient();
+	const { data } = await supabase.auth.getUser();
+
+	if (data.user) {
+		redirect('/');
+	}
+
 	return (
 		<>
 			<nav>
