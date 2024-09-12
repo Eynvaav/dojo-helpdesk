@@ -1,28 +1,20 @@
+import { createClient } from '@/utils/supabase/server';
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-	const res = await fetch('http://localhost:4000/tickets');
-
-	const tickets = await res.json();
-
-	return tickets.map((ticket) => ({
-		id: ticket.id,
-	}));
-}
-
 async function getTicket(id) {
-	await new Promise((resolve) => setTimeout(resolve, 3000));
-	const res = await fetch('http://localhost:4000/tickets/' + id, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const supabase = createClient();
 
-	if (!res.ok) {
+	const { data: ticket } = await supabase
+		.from('Tickets')
+		.select()
+		.eq('id', id)
+		.single();
+
+	if (!ticket) {
 		notFound();
 	}
 
-	return res.json();
+	return ticket;
 }
 
 export default async function TicketDetails({ params }) {
