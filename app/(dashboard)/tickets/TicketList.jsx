@@ -1,13 +1,16 @@
+import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
 
 async function getTickets() {
-	await new Promise((resolve) => setTimeout(resolve, 3000));
-	const res = await fetch('http://localhost:4000/tickets', {
-		next: {
-			revalidate: 0,
-		},
-	});
-	return res.json();
+	const supabase = createClient();
+
+	let { data: tickets, error } = await supabase.from('Tickets').select('*');
+
+	if (error) {
+		console.log(error.message);
+	}
+
+	return tickets;
 }
 
 export default async function TicketList() {
